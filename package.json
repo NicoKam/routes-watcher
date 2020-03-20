@@ -1,0 +1,28 @@
+{
+  "name": "routes-watcher",
+  "version": "0.0.1",
+  "description": "Watch the routes directory and generate the routes config.",
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "compile": "k-tools compile",
+    "pub": "npm run publish --registry=https://registry.npmjs.org/"
+  },
+  "keywords": [
+    "routes",
+    "watcher",
+    "umi",
+    "conventional"
+  ],
+  "author": "Kam",
+  "license": "MIT",
+  "dependencies": {
+    "chokidar": "^3.3.1",
+    "glob": "^7.1.6"
+  },
+  "devDependencies": {
+    "k-tools": "^0.1.0"
+  }
+}
