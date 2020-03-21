@@ -12,7 +12,7 @@ function run(config = {}) {
   } = config;
 
   if (!pageRoot || !fs.existsSync(pageRoot)) {
-    throw new Error("Invalid config.pageRoot.");
+    throw new Error("Invalid config.pageRoot: " + pageRoot);
   }
 
   if (watch) {
