@@ -25,6 +25,7 @@ export interface IConfig {
   watch?: boolean,
   /** The file in the routes root you want to scanned (glob) */
   files?: Array<string>,
+  filter?: (element?: string, index?: number, array?: Array<string>) => boolean,
   /** Ignored path (glob) */
   ignore?: Array<string>,
   /**
@@ -61,7 +62,7 @@ export interface IConfig {
 
 const defaultPageRoot = path.join(process.cwd(), "src/pages");
 
-function run(config: IConfig = {pageRoot: defaultPageRoot}) {
+function run(config: IConfig = { pageRoot: defaultPageRoot }) {
   const {
     pageRoot = defaultPageRoot,
     watch = false,
@@ -76,10 +77,10 @@ function run(config: IConfig = {pageRoot: defaultPageRoot}) {
     chokidar.watch(pageRoot, {
       ignored: /([\\/]node_modules[\\/]|[\\/]path[\\/]|[\\/]children[\\/]|[\\/]components[\\/])/,
     }).on("all", (/* eventName, filePath */) => {
-      scanRoutesDebounce({pageRoot, ...otherConfig});
+      scanRoutesDebounce({ pageRoot, ...otherConfig });
     });
   } else {
-    scanRoutes({pageRoot, ...otherConfig});
+    scanRoutes({ pageRoot, ...otherConfig });
   }
 }
 
@@ -94,11 +95,14 @@ function scanRoutesDebounce(config: IConfig) {
 
 let lastConfig: string = "";
 
-export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
+export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
   const {
     /** page root directory in your project */
     pageRoot = defaultPageRoot,
+    /** The glob rules */
     files: patternFiles = ["*.js", "*.ts"],
+    /** filter after all file was scanned */
+    filter = () => true,
     /** ignore directories */
     ignore = ["**/components/**", "**/layouts/**"],
     /** format every routes node */
@@ -118,7 +122,7 @@ export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
   const found = glob.sync(pattern, {
     cwd: pageRoot,
     ignore: ["**/node_modules/**", ...ignore],
-  });
+  }).filter(filter);
 
   /** routes tree root */
   const routeConfig: Array<RouteConfig> = [
@@ -171,8 +175,8 @@ export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
   /** format every route node */
   function revRouter(routes: Array<RouteConfig>, parentPath: string = ""): Array<RouteConfig> {
     return routes.map((route): RouteConfig => {
-      const {children = [], files = {}} = route;
-      let {path: p} = route;
+      const { children = [], files = {} } = route;
+      let { path: p } = route;
       if (p === "@") {
         p = "/";
       }
@@ -192,7 +196,7 @@ export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
       }
 
       const fullPath: string = (parentPath === "/" || p === "/") ? `${parentPath}${p}` : `${parentPath}/${p}`;
-      const newRoute = formatter({path: p, fullPath, files}, {
+      const newRoute = formatter({ path: p, fullPath, files }, {
         pushChild,
         toScript,
         relativePageRoot,
