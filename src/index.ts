@@ -25,7 +25,8 @@ export interface IConfig {
   watch?: boolean,
   /** The file in the routes root you want to scanned (glob) */
   files?: Array<string>,
-  filter?: (element?: string, index?: number, array?: Array<string>) => boolean,
+  /** filter after all file was scanned */
+  filter?: (value: string, index: number, array: Array<string>) => boolean,
   /** Ignored path (glob) */
   ignore?: Array<string>,
   /**
