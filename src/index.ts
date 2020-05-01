@@ -20,7 +20,7 @@ export interface RouteConfig {
 
 export interface IConfig {
   /** Path of your convention routes root. */
-  pageRoot: string,
+  pageRoot?: string,
   /** Use chokidar to watch pageRoot? */
   watch?: boolean,
   /** The file in the routes root you want to scanned (glob) */
@@ -59,8 +59,7 @@ export interface IConfig {
   output?: string | ((outputStr: string) => void),
 }
 
-
-const defaultPageRoot = path.join(process.cwd(), "src/pages")
+const defaultPageRoot = path.join(process.cwd(), "src/pages");
 
 function run(config: IConfig = {pageRoot: defaultPageRoot}) {
   const {
@@ -98,7 +97,7 @@ let lastConfig: string = "";
 export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
   const {
     /** page root directory in your project */
-    pageRoot,
+    pageRoot = defaultPageRoot,
     files: patternFiles = ["*.js", "*.ts"],
     /** ignore directories */
     ignore = ["**/components/**", "**/layouts/**"],
