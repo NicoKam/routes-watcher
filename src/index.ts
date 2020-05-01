@@ -117,7 +117,7 @@ export function scanRoutes(config: IConfig = {pageRoot: defaultPageRoot}) {
   /** scan all files you need */
   const found = glob.sync(pattern, {
     cwd: pageRoot,
-    ignore: ["**/node_modules/**", "**/path/**", "**/children/**", ...ignore],
+    ignore: ["**/node_modules/**", ...ignore],
   });
 
   /** routes tree root */
