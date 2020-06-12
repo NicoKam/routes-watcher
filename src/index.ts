@@ -142,7 +142,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
       if (!root.childCache) {
         root.childCache = {};
       }
-      if (root.childCache[p] != null) {
+      if (!root.childCache[p] ) {
         root.childCache[p] = {
           path: p,
           children: [],
