@@ -197,7 +197,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
       }
 
       const fullPath: string = (parentPath === "/" || p === "/") ? `${parentPath}${p}` : `${parentPath}/${p}`;
-      const newRoute = formatter({ path: p, fullPath, files }, {
+      const newRoute = formatter({ path: p, fullPath, files, children }, {
         pushChild,
         toScript,
         relativePageRoot,
