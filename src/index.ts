@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import fs from 'fs';
+import { existsSync, readFileSync, writeFileSync } from 'fs';
 import { join, relative } from 'path';
 import glob from 'glob';
 import chokidar from 'chokidar';
@@ -71,7 +71,7 @@ const defaultPageRoot = join(process.cwd(), 'src/pages');
 function run(config: IConfig = { pageRoot: defaultPageRoot }) {
   const { pageRoot = defaultPageRoot, watch = false } = config;
 
-  if (!pageRoot || !fs.existsSync(pageRoot)) {
+  if (!pageRoot || !existsSync(pageRoot)) {
     throw new Error('Invalid config.pageRoot: ' + pageRoot);
   }
 
@@ -238,7 +238,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
       let templateStr = template;
       if (templateFile) {
         try {
-          templateStr = fs.readFileSync(templateFile).toString();
+          templateStr = readFileSync(templateFile).toString();
         } catch (e) {
           console.error(e);
         }
@@ -248,7 +248,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
 
       const headerTips = '/* Warn: Do not change this file!!! */\n';
 
-      fs.writeFileSync(output, headerTips + routeConfigCode);
+      writeFileSync(output, headerTips + routeConfigCode);
     }
 
     if (successTips) {
