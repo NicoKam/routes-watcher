@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
 import fs from 'fs';
-import path from 'path';
+import { join, relative } from 'path';
 import glob from 'glob';
 import chokidar from 'chokidar';
 import Timeout = NodeJS.Timeout;
@@ -66,7 +66,7 @@ export interface IConfig {
   modifyRoutes?: (routes: Array<RouteConfig>) => Array<RouteConfig>;
 }
 
-const defaultPageRoot = path.join(process.cwd(), 'src/pages');
+const defaultPageRoot = join(process.cwd(), 'src/pages');
 
 function run(config: IConfig = { pageRoot: defaultPageRoot }) {
   const { pageRoot = defaultPageRoot, watch = false } = config;
@@ -200,7 +200,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
         }
 
         function relativePageRoot(currentPath: string): string {
-          return path.relative(currentPath, pageRoot);
+          return relative(currentPath, pageRoot);
         }
 
         const fullPath: string = parentPath === '/' || p === '/' ? `${parentPath}${p}` : `${parentPath}/${p}`;
