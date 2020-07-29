@@ -1,89 +1,90 @@
 /* eslint-disable no-console */
-import fs from "fs";
-import path from "path";
-import glob from "glob";
-import chokidar from "chokidar";
+import fs from 'fs';
+import path from 'path';
+import glob from 'glob';
+import chokidar from 'chokidar';
 import Timeout = NodeJS.Timeout;
 
 export interface RouteConfig {
   /** routePath */
-  path: string,
+  path: string;
   /** route full path */
-  fullPath?: string,
+  fullPath?: string;
   /** file cache */
-  files?: { [key: string]: string },
-  exact?: boolean,
-  children?: Array<RouteConfig>,
-  component?: string,
-  childCache?: { [key: string]: RouteConfig },
+  files?: { [key: string]: string };
+  exact?: boolean;
+  children?: Array<RouteConfig>;
+  component?: string;
+  childCache?: { [key: string]: RouteConfig };
 }
 
 export interface IConfig {
   /** Path of your convention routes root. */
-  pageRoot?: string,
+  pageRoot?: string;
   /** Use chokidar to watch pageRoot? */
-  watch?: boolean,
+  watch?: boolean;
   /** The file in the routes root you want to scanned (glob) */
-  files?: Array<string>,
+  files?: Array<string>;
   /** filter after all file was scanned */
-  filter?: (value: string, index: number, array: Array<string>) => boolean,
+  filter?: (value: string, index: number, array: Array<string>) => boolean;
   /** Ignored path (glob) */
-  ignore?: Array<string>,
+  ignore?: Array<string>;
   /**
    * Format every routes node
    * @param routeConfig
    * @param utils
    */
-  formatter?: (routeConfig: RouteConfig, utils: {
-    /**
-     * Push routeConfig to children
-     * @param child
-     */
-    pushChild: (child: RouteConfig) => void
-    /**
-     * Mark this string and replace it to real script
-     * @param stringScript
-     */
-    toScript: (stringScript: string) => string
-    /**
-     * Find the path relative to page root
-     * @param currentPath
-     */
-    relativePageRoot: (currentPath: string) => string
-  }) => RouteConfig,
+  formatter?: (
+    routeConfig: RouteConfig,
+    utils: {
+      /**
+       * Push routeConfig to children
+       * @param child
+       */
+      pushChild: (child: RouteConfig) => void;
+      /**
+       * Mark this string and replace it to real script
+       * @param stringScript
+       */
+      toScript: (stringScript: string) => string;
+      /**
+       * Find the path relative to page root
+       * @param currentPath
+       */
+      relativePageRoot: (currentPath: string) => string;
+    },
+  ) => RouteConfig;
   /** output template */
-  template?: string,
+  template?: string;
   /** output template file path, it will instead `config.template` */
-  templateFile?: string,
+  templateFile?: string;
   /** Log tips when creation completed */
-  successTips?: string,
+  successTips?: string;
   /** output path */
-  output?: string | ((outputStr: string) => void),
+  output?: string | ((outputStr: string) => void);
   /* modify routes before output */
-  modifyRoutes?: (routes:Array<RouteConfig>) => Array<RouteConfig>,
+  modifyRoutes?: (routes: Array<RouteConfig>) => Array<RouteConfig>;
 }
 
-const defaultPageRoot = path.join(process.cwd(), "src/pages");
+const defaultPageRoot = path.join(process.cwd(), 'src/pages');
 
 function run(config: IConfig = { pageRoot: defaultPageRoot }) {
-  const {
-    pageRoot = defaultPageRoot,
-    watch = false,
-    ...otherConfig
-  } = config;
+  const { pageRoot = defaultPageRoot, watch = false } = config;
 
   if (!pageRoot || !fs.existsSync(pageRoot)) {
-    throw new Error("Invalid config.pageRoot: " + pageRoot);
+    throw new Error('Invalid config.pageRoot: ' + pageRoot);
   }
 
   if (watch) {
-    chokidar.watch(pageRoot, {
-      ignored: /([\\/]node_modules[\\/]|[\\/]path[\\/]|[\\/]children[\\/]|[\\/]components[\\/])/,
-    }).on("all", (/* eventName, filePath */) => {
-      scanRoutesDebounce({ pageRoot, ...otherConfig });
-    });
+    chokidar
+      .watch(pageRoot, {
+        ignored: /([\\/]node_modules[\\/]|[\\/]path[\\/]|[\\/]children[\\/]|[\\/]components[\\/])/,
+      })
+      .on('all', (/* eventName, filePath */) => {
+        scanRoutesDebounce({ ...config });
+      });
   } else {
-    scanRoutes({ pageRoot, ...otherConfig });
+    scanRoutes({ ...config });
   }
 }
 
@@ -96,42 +97,44 @@ function scanRoutesDebounce(config: IConfig) {
   }, 200);
 }
 
-let lastConfig: string = "";
+let lastConfig: string = '';
 
 export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
   const {
     /** page root directory in your project */
     pageRoot = defaultPageRoot,
     /** The glob rules */
-    files: patternFiles = ["*.js", "*.ts"],
+    files: patternFiles = ['*.js', '*.ts'],
     /** filter after all file was scanned */
     filter = () => true,
     /** ignore directories */
-    ignore = ["**/components/**", "**/layouts/**"],
+    ignore = ['**/components/**', '**/layouts/**'],
     /** format every routes node */
     formatter = (a: any) => a,
     /** output template */
-    template = "export default @routeConfig;",
+    template = 'export default @routeConfig;',
     /** output template file, it will instead `config.template` */
     templateFile,
     /** output path */
     output,
-    successTips = "[Success] Routes updated.",
-    modifyRoutes = r => r,
+    successTips = '[Success] Routes updated.',
+    watch,
+    modifyRoutes = (r) => r,
   } = config;
 
-
-  const pattern = `**/?(${patternFiles.join("|")})`;
+  const pattern = `**/?(${patternFiles.join('|')})`;
   /** scan all files you need */
-  const found = glob.sync(pattern, {
-    cwd: pageRoot,
-    ignore: ["**/node_modules/**", ...ignore],
-  }).filter(filter);
+  const found = glob
+    .sync(pattern, {
+      cwd: pageRoot,
+      ignore: ['**/node_modules/**', ...ignore],
+    })
+    .filter(filter);
 
   /** routes tree root */
   const routeConfig: Array<RouteConfig> = [
     {
-      path: "/",
+      path: '/',
       children: [],
       files: {},
     },
@@ -145,7 +148,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
       if (!root.childCache) {
         root.childCache = {};
       }
-      if (!root.childCache[p] ) {
+      if (!root.childCache[p]) {
         root.childCache[p] = {
           path: p,
           children: [],
@@ -162,10 +165,10 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
 
   /** check all files */
   found.forEach((filePath: string) => {
-    const fileGroup = filePath.split("/");
+    const fileGroup = filePath.split('/');
     const fullFileName = fileGroup.pop();
     if (fullFileName) {
-      const fileName = fullFileName.substr(0, fullFileName.lastIndexOf("."));
+      const fileName = fullFileName.substr(0, fullFileName.lastIndexOf('.'));
 
       /* get the parent node */
       const parent = findParent(fileGroup);
@@ -177,57 +180,61 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
   });
 
   /** format every route node */
-  function revRouter(routes: Array<RouteConfig>, parentPath: string = ""): Array<RouteConfig> {
-    return routes.map((route): RouteConfig => {
-      const { children = [], files = {} } = route;
-      let { path: p } = route;
-      if (p === "@") {
-        p = "/";
-      }
+  function revRouter(routes: Array<RouteConfig>, parentPath: string = ''): Array<RouteConfig> {
+    return routes.map(
+      (route): RouteConfig => {
+        const { children = [], files = {} } = route;
+        let { path: p } = route;
+        if (p === '@') {
+          p = '/';
+        }
 
-      const tempChildren: Array<RouteConfig> = [];
+        const tempChildren: Array<RouteConfig> = [];
 
-      function pushChild(child: RouteConfig): void {
-        tempChildren.push(child);
-      }
+        function pushChild(child: RouteConfig): void {
+          tempChildren.push(child);
+        }
 
-      function toScript(stringScript: string): string {
-        return `script$${stringScript}$`;
-      }
+        function toScript(stringScript: string): string {
+          return `script$${stringScript}$`;
+        }
 
-      function relativePageRoot(currentPath: string): string {
-        return path.relative(currentPath, pageRoot);
-      }
+        function relativePageRoot(currentPath: string): string {
+          return path.relative(currentPath, pageRoot);
+        }
 
-      const fullPath: string = (parentPath === "/" || p === "/") ? `${parentPath}${p}` : `${parentPath}/${p}`;
-      const newRoute = formatter({ path: p, fullPath, files, children }, {
-        pushChild,
-        toScript,
-        relativePageRoot,
-      });
-      return {
-        path: p,
-        ...newRoute,
-        children: [...tempChildren, ...revRouter(children, fullPath)],
-      };
-    });
+        const fullPath: string = parentPath === '/' || p === '/' ? `${parentPath}${p}` : `${parentPath}/${p}`;
+        const newRoute = formatter(
+          { path: p, fullPath, files, children },
+          {
+            pushChild,
+            toScript,
+            relativePageRoot,
+          },
+        );
+        return {
+          path: p,
+          ...newRoute,
+          children: [...tempChildren, ...revRouter(children, fullPath)],
+        };
+      },
+    );
   }
 
   const newRoutes: Array<RouteConfig> = modifyRoutes(revRouter(routeConfig));
 
-
-  const routesConfigStr: string = JSON.stringify(newRoutes, null, "  ").replace(/"script\$(.*)\$"/g, (arg1) => {
+  const routesConfigStr: string = JSON.stringify(newRoutes, null, '  ').replace(/"script\$(.*)\$"/g, (arg1) => {
     // eslint-disable-next-line no-eval
     const str = eval(arg1);
     return str.substr(7, str.length - 8);
   });
-  if (lastConfig !== routesConfigStr) {
+  if ((!watch && typeof output === 'function') || lastConfig !== routesConfigStr) {
     lastConfig = routesConfigStr;
 
     /** output routes config */
-    if (typeof output === "function") {
+    if (typeof output === 'function') {
       output(routesConfigStr);
-    } else if (typeof output === "string") {
+    } else if (typeof output === 'string') {
       let templateStr = template;
       if (templateFile) {
         try {
@@ -237,10 +244,9 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
         }
       }
 
-      const routeConfigCode = templateStr
-        .replace(/@routeConfig/g, routesConfigStr);
+      const routeConfigCode = templateStr.replace(/@routeConfig/g, routesConfigStr);
 
-      const headerTips = "/* Warn: Do not change this file!!! */\n";
+      const headerTips = '/* Warn: Do not change this file!!! */\n';
 
       fs.writeFileSync(output, headerTips + routeConfigCode);
     }
@@ -248,11 +254,9 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
     if (successTips) {
       console.log(successTips);
     }
-
   } else {
     /** routes not changed */
   }
 }
-
 
 export default run;
