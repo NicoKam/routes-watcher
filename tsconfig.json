@@ -18,7 +18,8 @@
     "allowJs": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
-    "strict": true
+    "strict": true,
+    "esModuleInterop": true
   },
   "exclude": [
     "node_modules",
