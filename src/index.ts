@@ -60,7 +60,7 @@ export interface IConfig {
   /** Log tips when creation completed */
   successTips?: string;
   /** output path */
-  output?: string | ((outputStr: string) => void);
+  output?: string | ((outputStr: string, templateStr: string) => void);
   /* modify routes before output */
   modifyRoutes?: (routes: Array<RouteConfig>) => Array<RouteConfig>;
 }
@@ -227,26 +227,27 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
     const str = eval(arg1);
     return str.substr(7, str.length - 8);
   });
+
   if ((!watch && typeof output === 'function') || lastConfig !== routesConfigStr) {
     lastConfig = routesConfigStr;
 
+    let templateStr = template;
+    if (templateFile) {
+      try {
+        templateStr = readFileSync(templateFile).toString();
+      } catch (e) {
+        console.error(e);
+      }
+    }
+
+    const routeConfigCode = templateStr.replace(/@routeConfig/g, routesConfigStr);
+
+
     /** output routes config */
     if (typeof output === 'function') {
-      output(routesConfigStr);
+      output(routesConfigStr, templateStr);
     } else if (typeof output === 'string') {
-      let templateStr = template;
-      if (templateFile) {
-        try {
-          templateStr = readFileSync(templateFile).toString();
-        } catch (e) {
-          console.error(e);
-        }
-      }
-
-      const routeConfigCode = templateStr.replace(/@routeConfig/g, routesConfigStr);
-
       const headerTips = '/* Warn: Do not change this file!!! */\n';
-
       writeFileSync(output, headerTips + routeConfigCode);
     }
 
