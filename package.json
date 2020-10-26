@@ -1,6 +1,6 @@
 {
   "name": "routes-watcher",
-  "version": "0.0.15",
+  "version": "0.1.0",
   "description": "Watch the routes directory and generate the routes config.",
   "main": "lib/index.js",
   "files": [
