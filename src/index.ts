@@ -40,7 +40,7 @@ export interface IConfig {
        * Push routeConfig to children
        * @param child
        */
-      pushChild: (child: RouteConfig, order: number) => void;
+      pushChild: (child: RouteConfig, order?: number) => void;
       /**
        * Mark this string and replace it to real script
        * @param stringScript
