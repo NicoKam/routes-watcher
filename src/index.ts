@@ -40,7 +40,7 @@ export interface IConfig {
        * Push routeConfig to children
        * @param child
        */
-      pushChild: (child: RouteConfig) => void;
+      pushChild: (child: RouteConfig, order: number) => void;
       /**
        * Mark this string and replace it to real script
        * @param stringScript
@@ -247,7 +247,6 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
     }
 
     const routeConfigCode = templateStr.replace(/@routeConfig/g, routesConfigStr);
-
 
     /** output routes config */
     if (typeof output === 'function') {
