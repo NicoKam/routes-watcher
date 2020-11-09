@@ -190,8 +190,14 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
 
         const tempChildren: Array<RouteConfig> = [];
 
-        function pushChild(child: RouteConfig): void {
-          tempChildren.push(child);
+        function pushChild(child: RouteConfig, order?: number): void {
+          if (order == null) {
+            tempChildren.push(child);
+          } else if (order >= tempChildren.length) {
+            tempChildren[order] = child;
+          } else {
+            tempChildren.splice(order, 0, child);
+          }
         }
 
         function toScript(stringScript: string): string {
@@ -214,7 +220,7 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
         return {
           path: p,
           ...newRoute,
-          children: [...tempChildren, ...revRouter(children, fullPath)],
+          children: [...tempChildren.filter((v) => v !== undefined), ...revRouter(children, fullPath)],
         };
       },
     );
