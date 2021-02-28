@@ -15,6 +15,7 @@
     "routes",
     "watcher",
     "umi",
+    "convention",
     "conventional"
   ],
   "author": "Kam",

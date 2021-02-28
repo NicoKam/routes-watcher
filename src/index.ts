@@ -62,7 +62,10 @@ export interface IConfig {
   /** output path */
   output?: string | ((outputStr: string, templateStr: string) => void);
   /* modify routes before output */
-  modifyRoutes?: (routes: Array<RouteConfig>) => Array<RouteConfig>;
+  modifyRoutes?: (
+    routes: Array<RouteConfig>,
+    options: Omit<IConfig, 'modifyRoutes' | 'formatter' | 'filter'>,
+  ) => Array<RouteConfig>;
 }
 
 const defaultPageRoot = join(process.cwd(), 'src/pages');
@@ -226,7 +229,10 @@ export function scanRoutes(config: IConfig = { pageRoot: defaultPageRoot }) {
     );
   }
 
-  const newRoutes: Array<RouteConfig> = modifyRoutes(revRouter(routeConfig));
+  // pick 
+  const { filter: v1, formatter: v2, modifyRoutes: v3, ...callbackConfig } = config;
+
+  const newRoutes: Array<RouteConfig> = modifyRoutes(revRouter(routeConfig), callbackConfig);
 
   const routesConfigStr: string = JSON.stringify(newRoutes, null, '  ').replace(/"script\$(.*)\$"/g, (arg1) => {
     // eslint-disable-next-line no-eval
