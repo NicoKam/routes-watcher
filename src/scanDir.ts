@@ -1,7 +1,7 @@
-import slash from 'slash';
-import { join, extname, basename } from 'path';
 import { promises as fs } from 'fs';
-import { DirFileObject, RouteConfig } from './defs';
+import { basename, extname, join } from 'path';
+import slash from 'slash';
+import { DirFileObject } from './defs';
 
 export type ScanDirOptions = {
   ignore?: RegExp | RegExp[];

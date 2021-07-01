@@ -14,13 +14,16 @@ const defaultRouteExt = new Set(['.js', '.jsx', '.ts', '.tsx']);
 const defaultToRouteOptions: ToRouteOptions = {
   filter: (obj) => defaultRouteExt.has(obj.suffix),
   isLayout: (obj) => obj.name === '_layout',
-  componentPath: (obj) => '@/pages/' + slash(join(dirname(obj.path), basename(obj.path, obj.suffix))),
+  componentPath: (obj) => '@/pages/' + obj.path,
   routePath: (obj) => {
     const bName = basename(obj.path, obj.suffix);
+    let routePath = '';
     if (obj.name === '_layout' || obj.name === 'index') {
-      return '/' + dirname(obj.path);
+      routePath = dirname(obj.path);
+    } else {
+      routePath = slash(join(dirname(obj.path), bName));
     }
-    return '/' + slash(join(dirname(obj.path), bName));
+    return '/' + (routePath === '.' ? '' : routePath);
   },
 };
 
