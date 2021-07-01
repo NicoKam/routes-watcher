@@ -3,16 +3,18 @@ import { DirFileObject, FileObject, RouteConfig } from './defs';
 import slash from 'slash';
 
 export type ToRouteOptions = {
+  extensions: string[] | Set<string>;
   filter: (obj: FileObject) => boolean;
   isLayout: (obj: FileObject) => boolean;
   componentPath: (obj: FileObject) => string;
   routePath: (obj: FileObject) => string;
 };
 
-const defaultRouteExt = new Set(['.js', '.jsx', '.ts', '.tsx']);
+const defaultRouteExt = new Set(['.js', '.jsx', '.ts', '.tsx', '.vue']);
 
 const defaultToRouteOptions: ToRouteOptions = {
-  filter: (obj) => defaultRouteExt.has(obj.suffix),
+  extensions: defaultRouteExt,
+  filter: () => true,
   isLayout: (obj) => obj.name === '_layout',
   componentPath: (obj) => '@/pages/' + obj.path,
   routePath: (obj) => {
@@ -27,8 +29,14 @@ const defaultToRouteOptions: ToRouteOptions = {
   },
 };
 
-function revTree(dirTree: DirFileObject[], root: RouteConfig[], options: ToRouteOptions, level = 0): void {
-  const { isLayout, componentPath, filter, routePath } = options;
+/**
+ * Scan the directory tree and build routes config.
+ * @param dirTree directory tree from scanDir()
+ * @param root reference of root routes config
+ * @param options
+ */
+function buildRoutes(dirTree: DirFileObject[], root: RouteConfig[], options: ToRouteOptions): void {
+  const { isLayout, componentPath, filter, routePath, extensions } = options;
 
   const subRoot: RouteConfig[] = [];
   let layoutRoot: RouteConfig | null = null;
@@ -36,10 +44,13 @@ function revTree(dirTree: DirFileObject[], root: RouteConfig[], options: ToRoute
     const obj = dirTree[i];
 
     if ('isFile' in obj) {
+      // extensions filter
+      if (extensions instanceof Set && extensions.size > 0 && !extensions.has(obj.suffix)) continue;
+      // custom filter
       if (false === filter(obj)) continue;
       const layout = isLayout(obj);
-      /* layout found */
       if (layout) {
+        // layout found
         layoutRoot = {
           path: routePath(obj),
           component: componentPath(obj),
@@ -47,7 +58,7 @@ function revTree(dirTree: DirFileObject[], root: RouteConfig[], options: ToRoute
           children: [],
         };
       } else {
-        /* page only */
+        // page only
         subRoot.push({
           path: routePath(obj),
           component: componentPath(obj),
@@ -55,23 +66,33 @@ function revTree(dirTree: DirFileObject[], root: RouteConfig[], options: ToRoute
         });
       }
     } else {
-      revTree(obj.children || [], subRoot, options, level + 1);
+      // Scan sub directory
+      buildRoutes(obj.children || [], subRoot, options);
     }
   }
 
   if (layoutRoot != null) {
+    // Take current routes to a deeper level(children) when there is a layout file exists.
     layoutRoot.children = subRoot;
     root.push(layoutRoot);
   } else {
+    // Merge all routes to root. No layout.
     root.push(...subRoot);
   }
 }
 
 export default function toRoute(dirTree: DirFileObject[], options: Partial<ToRouteOptions> = {}) {
   const routeRoot: RouteConfig[] = [];
-  revTree(dirTree, routeRoot, {
+
+  const mergedOptions = {
     ...defaultToRouteOptions,
     ...options,
-  });
+  };
+
+  if (Array.isArray(mergedOptions.extensions)) {
+    mergedOptions.extensions = new Set(mergedOptions.extensions);
+  }
+
+  buildRoutes(dirTree, routeRoot, mergedOptions);
   return routeRoot;
 }

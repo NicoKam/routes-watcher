@@ -4,47 +4,56 @@ import slash from 'slash';
 import { DirFileObject } from './defs';
 
 export type ScanDirOptions = {
-  ignore?: RegExp | RegExp[];
+  includes?: RegExp | RegExp[];
+  excludes?: RegExp | RegExp[];
 };
 
 type ScanOptions = {
-  ignore: RegExp[];
+  includes: RegExp[];
+  excludes: RegExp[];
   rootPath: string;
 };
 
-async function scan(path: string = '', name = '', options: ScanOptions): Promise<DirFileObject | false> {
-  const { ignore, rootPath } = options;
-  const curPath = slash(join(path, name));
-  const fullPath = slash(join(rootPath, curPath));
+/**
+ * Scan and build directory tree
+ * @param dir relative parent directory
+ * @param name current filename
+ * @param options
+ * @returns
+ */
+async function scan(dir: string = '', options: ScanOptions): Promise<DirFileObject | false> {
+  const { excludes, includes, rootPath } = options;
+  const name = basename(dir);
+  const fullPath = slash(join(rootPath, dir));
   const stat = await fs.stat(fullPath);
+
+  // ignore filename starts with '.'
   if (name[0] === '.') {
     return false;
   }
 
   if (stat.isFile()) {
-    const shouldIgnore = ignore.some((reg) => {
-      return reg.test(fullPath);
-    });
+    const isValid = includes.every((reg) => reg.test(fullPath)) && !excludes.some((reg) => reg.test(fullPath));
 
-    if (shouldIgnore) {
+    if (!isValid) {
       return false;
     }
 
-    const ext = extname(curPath);
+    const ext = extname(dir);
 
     return {
-      name: basename(curPath, ext),
-      path: curPath,
+      name: basename(dir, ext),
+      path: dir,
       isFile: true,
       suffix: ext,
     };
   } else if (stat.isDirectory()) {
     const dirRes = await fs.readdir(fullPath);
-    const children: DirFileObject[] = await Promise.all(dirRes.map(async (name) => scan(curPath, name, options))).then(
-      (res) => res.filter((res) => !!res) as DirFileObject[],
-    );
+    const children: DirFileObject[] = await Promise.all(
+      dirRes.map(async (name) => scan(slash(join(dir, name)), options)),
+    ).then((res) => res.filter((res) => !!res) as DirFileObject[]);
     return {
-      path: curPath,
+      path: dir,
       name,
       isDirectory: true,
       children,
@@ -61,17 +70,26 @@ async function scan(path: string = '', name = '', options: ScanOptions): Promise
  * @returns
  */
 export default async function scanDir(rootPath: string, options: ScanDirOptions = {}): Promise<DirFileObject[]> {
-  const { ignore: _ignore } = options;
-  const ignore: RegExp[] = [];
-  if (_ignore) {
-    if (Array.isArray(_ignore)) {
-      ignore.push(..._ignore);
+  const { excludes: _excludes, includes: _includes } = options;
+  const includes: RegExp[] = [];
+  const excludes: RegExp[] = [];
+  if (_includes) {
+    if (Array.isArray(_includes)) {
+      includes.push(..._includes);
     } else {
-      ignore.push(_ignore);
+      includes.push(_includes);
     }
   }
-  const root = await scan('', '', {
-    ignore,
+  if (_excludes) {
+    if (Array.isArray(_excludes)) {
+      excludes.push(..._excludes);
+    } else {
+      excludes.push(_excludes);
+    }
+  }
+  const root = await scan('', {
+    includes,
+    excludes,
     rootPath,
   });
 
