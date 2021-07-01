@@ -7,8 +7,9 @@
     "lib"
   ],
   "scripts": {
-    "compile": "k-tools compile",
-    "prepublish": "npm run compile",
+    "clear": "rimraf esm lib",
+    "build": "npm run clear && tsc -p config/tsconfig.esm.prod.json && tsc -p config/tsconfig.prod.json",
+    "prepublish": "npm run build",
     "pub": "npm publish --registry=https://registry.npmjs.org/ && git push"
   },
   "keywords": [

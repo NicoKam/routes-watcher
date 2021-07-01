@@ -1,0 +1,1817 @@
+[
+  {
+    "path": "/404",
+    "component": "@/pages/404",
+    "exact": true
+  },
+  {
+    "path": "/bottom-button",
+    "component": "@/pages/bottom-button/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/bottom-button/government/GovernmentPage",
+        "component": "@/pages/bottom-button/government/GovernmentPage",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/government",
+        "component": "@/pages/bottom-button/government/index",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/ioc",
+        "component": "@/pages/bottom-button/ioc/index",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/ioc/IocPage",
+        "component": "@/pages/bottom-button/ioc/IocPage",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/smart",
+        "component": "@/pages/bottom-button/smart/index",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/smart/popup/environment-monitor/EnvironmentMonitor",
+        "component": "@/pages/bottom-button/smart/popup/environment-monitor/EnvironmentMonitor",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/smart/popup/environment-monitor",
+        "component": "@/pages/bottom-button/smart/popup/environment-monitor/index",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/smart/SmartPage",
+        "component": "@/pages/bottom-button/smart/SmartPage",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/social/constants",
+        "component": "@/pages/bottom-button/social/constants",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/social",
+        "component": "@/pages/bottom-button/social/index",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/social/SocialPage",
+        "component": "@/pages/bottom-button/social/SocialPage",
+        "exact": true
+      },
+      {
+        "path": "/bottom-button/utils/smartPopupView",
+        "component": "@/pages/bottom-button/utils/smartPopupView",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/city-mgt",
+    "component": "@/pages/city-mgt/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/city-mgt/bottom/city-neat",
+        "component": "@/pages/city-mgt/bottom/city-neat/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/bottom/city-safety",
+        "component": "@/pages/city-mgt/bottom/city-safety/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/bottom/env-clean",
+        "component": "@/pages/city-mgt/bottom/env-clean/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/bottom/well-manage",
+        "component": "@/pages/city-mgt/bottom/well-manage/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left",
+        "component": "@/pages/city-mgt/left/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/page",
+        "component": "@/pages/city-mgt/left/page",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/city-event/cityEvent",
+        "component": "@/pages/city-mgt/left/popup/city-event/cityEvent",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/city-event",
+        "component": "@/pages/city-mgt/left/popup/city-event/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/event-list/eventList",
+        "component": "@/pages/city-mgt/left/popup/event-list/eventList",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/event-list",
+        "component": "@/pages/city-mgt/left/popup/event-list/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/green-perform",
+        "component": "@/pages/city-mgt/left/popup/green-perform/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/green-perform/modal",
+        "component": "@/pages/city-mgt/left/popup/green-perform/modal",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/text-info",
+        "component": "@/pages/city-mgt/left/popup/text-info/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/text-info/textInfo",
+        "component": "@/pages/city-mgt/left/popup/text-info/textInfo",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/video-info",
+        "component": "@/pages/city-mgt/left/popup/video-info/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/left/popup/video-info/modal",
+        "component": "@/pages/city-mgt/left/popup/video-info/modal",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right",
+        "component": "@/pages/city-mgt/right/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/hwzyqy/EnterprisePage",
+        "component": "@/pages/city-mgt/right/popup/env-clean/hwzyqy/EnterprisePage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/hwzyqy",
+        "component": "@/pages/city-mgt/right/popup/env-clean/hwzyqy/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/overview",
+        "component": "@/pages/city-mgt/right/popup/env-clean/overview/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/overview/OverviewPage",
+        "component": "@/pages/city-mgt/right/popup/env-clean/overview/OverviewPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/statistic",
+        "component": "@/pages/city-mgt/right/popup/env-clean/statistic/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/env-clean/statistic/StatisticPage",
+        "component": "@/pages/city-mgt/right/popup/env-clean/statistic/StatisticPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/lyl-detail",
+        "component": "@/pages/city-mgt/right/popup/well-manage/lyl-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/lyl-detail/LylDetailPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/lyl-detail/LylDetailPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/lyl-rank",
+        "component": "@/pages/city-mgt/right/popup/well-manage/lyl-rank/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/lyl-rank/LylRankPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/lyl-rank/LylRankPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/mqsb/advise-record/AdviseRecordPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/mqsb/advise-record/AdviseRecordPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/mqsb/advise-record",
+        "component": "@/pages/city-mgt/right/popup/well-manage/mqsb/advise-record/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/mqsb/patrol-record",
+        "component": "@/pages/city-mgt/right/popup/well-manage/mqsb/patrol-record/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/mqsb/patrol-record/PatrolRecordPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/mqsb/patrol-record/PatrolRecordPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/overview",
+        "component": "@/pages/city-mgt/right/popup/well-manage/overview/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/overview/OverviewPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/overview/OverviewPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/services/wellManage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/services/wellManage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/statistic",
+        "component": "@/pages/city-mgt/right/popup/well-manage/statistic/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/statistic/StatisticPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/statistic/StatisticPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/szss/public-facility",
+        "component": "@/pages/city-mgt/right/popup/well-manage/szss/public-facility/index",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/popup/well-manage/szss/public-facility/PublicFacilityPage",
+        "component": "@/pages/city-mgt/right/popup/well-manage/szss/public-facility/PublicFacilityPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/RightPage",
+        "component": "@/pages/city-mgt/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/utils/code",
+        "component": "@/pages/city-mgt/right/utils/code",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/utils/getEnvCleanIcons",
+        "component": "@/pages/city-mgt/right/utils/getEnvCleanIcons",
+        "exact": true
+      },
+      {
+        "path": "/city-mgt/right/utils/getWellManageIcons",
+        "component": "@/pages/city-mgt/right/utils/getWellManageIcons",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/datav",
+    "component": "@/pages/datav/index",
+    "exact": true
+  },
+  {
+    "path": "/datav/page",
+    "component": "@/pages/datav/page",
+    "exact": true
+  },
+  {
+    "path": "/datav-login",
+    "component": "@/pages/datav-login/index",
+    "exact": true
+  },
+  {
+    "path": "/datav-login/page",
+    "component": "@/pages/datav-login/page",
+    "exact": true
+  },
+  {
+    "path": "/demo",
+    "component": "@/pages/demo/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/city-mgt/left",
+    "component": "@/pages/demo/popup/city-mgt/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/city-mgt/right",
+    "component": "@/pages/demo/popup/city-mgt/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/e-gov/left",
+    "component": "@/pages/demo/popup/e-gov/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/e-gov/right",
+    "component": "@/pages/demo/popup/e-gov/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/garbage-exposure",
+    "component": "@/pages/demo/popup/garbage-exposure/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/home/left",
+    "component": "@/pages/demo/popup/home/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/home/right",
+    "component": "@/pages/demo/popup/home/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/industry-economy/left",
+    "component": "@/pages/demo/popup/industry-economy/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/industry-economy/right",
+    "component": "@/pages/demo/popup/industry-economy/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/ioc-command-control/left",
+    "component": "@/pages/demo/popup/ioc-command-control/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/ioc-command-control/right",
+    "component": "@/pages/demo/popup/ioc-command-control/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/ioc-one-net",
+    "component": "@/pages/demo/popup/ioc-one-net/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/smart-livehood",
+    "component": "@/pages/demo/popup/smart-livehood/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/smart-livehood/left",
+    "component": "@/pages/demo/popup/smart-livehood/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/smart-livehood/middle",
+    "component": "@/pages/demo/popup/smart-livehood/middle/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/smart-livehood/right",
+    "component": "@/pages/demo/popup/smart-livehood/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/social-governance/left",
+    "component": "@/pages/demo/popup/social-governance/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/social-governance/middle",
+    "component": "@/pages/demo/popup/social-governance/middle/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/social-governance/right",
+    "component": "@/pages/demo/popup/social-governance/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/urban-rural/left",
+    "component": "@/pages/demo/popup/urban-rural/left/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/urban-rural/middle",
+    "component": "@/pages/demo/popup/urban-rural/middle/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/popup/urban-rural/right",
+    "component": "@/pages/demo/popup/urban-rural/right/index",
+    "exact": true
+  },
+  {
+    "path": "/demo/socket",
+    "component": "@/pages/demo/socket/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/demo/socket/constant",
+        "component": "@/pages/demo/socket/constant",
+        "exact": true
+      },
+      {
+        "path": "/demo/socket",
+        "component": "@/pages/demo/socket/index",
+        "exact": true
+      },
+      {
+        "path": "/demo/socket/socketLogUtil",
+        "component": "@/pages/demo/socket/socketLogUtil",
+        "exact": true
+      },
+      {
+        "path": "/demo/socket/SocketPage",
+        "component": "@/pages/demo/socket/SocketPage",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/e-gov",
+    "component": "@/pages/e-gov/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/e-gov/left/EGovLeftPage",
+        "component": "@/pages/e-gov/left/EGovLeftPage",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left",
+        "component": "@/pages/e-gov/left/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/history-popup/HistoryPopup",
+        "component": "@/pages/e-gov/left/popup/history-popup/HistoryPopup",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/history-popup",
+        "component": "@/pages/e-gov/left/popup/history-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/jz-popup",
+        "component": "@/pages/e-gov/left/popup/jz-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/jz-popup/JzPopup",
+        "component": "@/pages/e-gov/left/popup/jz-popup/JzPopup",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/service-center-details",
+        "component": "@/pages/e-gov/left/popup/service-center-details/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/service-center-details/ServiceCenterDetails",
+        "component": "@/pages/e-gov/left/popup/service-center-details/ServiceCenterDetails",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/service-center-details-center-enlarge",
+        "component": "@/pages/e-gov/left/popup/service-center-details-center-enlarge/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/popup/service-center-details-center-enlarge/ServiceCenterDetailsCenterEnlarge",
+        "component": "@/pages/e-gov/left/popup/service-center-details-center-enlarge/ServiceCenterDetailsCenterEnlarge",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/services/GovernmentAffairs",
+        "component": "@/pages/e-gov/left/services/GovernmentAffairs",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/services/ReformHighlights",
+        "component": "@/pages/e-gov/left/services/ReformHighlights",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/left/services/ThreeLevelService",
+        "component": "@/pages/e-gov/left/services/ThreeLevelService",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/EGovRightPage",
+        "component": "@/pages/e-gov/right/EGovRightPage",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right",
+        "component": "@/pages/e-gov/right/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/popup/jz-popup",
+        "component": "@/pages/e-gov/right/popup/jz-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/popup/jz-popup/JzPopup",
+        "component": "@/pages/e-gov/right/popup/jz-popup/JzPopup",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/popup/service-center-details",
+        "component": "@/pages/e-gov/right/popup/service-center-details/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/popup/service-center-details/ServiceCenterDetails",
+        "component": "@/pages/e-gov/right/popup/service-center-details/ServiceCenterDetails",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/services",
+        "component": "@/pages/e-gov/right/services/index",
+        "exact": true
+      },
+      {
+        "path": "/e-gov/right/utils/icons",
+        "component": "@/pages/e-gov/right/utils/icons",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/exception/404",
+    "component": "@/pages/exception/404/index",
+    "exact": true
+  },
+  {
+    "path": "/exception/500",
+    "component": "@/pages/exception/500/index",
+    "exact": true
+  },
+  {
+    "path": "/fullpage",
+    "component": "@/pages/fullpage/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/fullpage",
+        "component": "@/pages/fullpage/index",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/home",
+    "component": "@/pages/home/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/home/bottom/BottomPage",
+        "component": "@/pages/home/bottom/BottomPage",
+        "exact": true
+      },
+      {
+        "path": "/home/bottom",
+        "component": "@/pages/home/bottom/index",
+        "exact": true
+      },
+      {
+        "path": "/home/bottom/popup/duty-schedule/DutySchedule",
+        "component": "@/pages/home/bottom/popup/duty-schedule/DutySchedule",
+        "exact": true
+      },
+      {
+        "path": "/home/bottom/popup/duty-schedule",
+        "component": "@/pages/home/bottom/popup/duty-schedule/index",
+        "exact": true
+      },
+      {
+        "path": "/home/bottom/popup",
+        "component": "@/pages/home/bottom/popup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/HomePage",
+        "component": "@/pages/home/HomePage",
+        "exact": true
+      },
+      {
+        "path": "/home",
+        "component": "@/pages/home/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left",
+        "component": "@/pages/home/left/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/LeftPage",
+        "component": "@/pages/home/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/enterprise-archive/EnterpriseArchive",
+        "component": "@/pages/home/left/popup/enterprise-archive/EnterpriseArchive",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/enterprise-archive",
+        "component": "@/pages/home/left/popup/enterprise-archive/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup",
+        "component": "@/pages/home/left/popup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/online-manager-doc",
+        "component": "@/pages/home/left/popup/online-manager-doc/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/online-manager-doc/OnlineManager",
+        "component": "@/pages/home/left/popup/online-manager-doc/OnlineManager",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/overview",
+        "component": "@/pages/home/left/popup/overview/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/work-order",
+        "component": "@/pages/home/left/popup/work-order/index",
+        "exact": true
+      },
+      {
+        "path": "/home/left/popup/work-order/WorkOrder",
+        "component": "@/pages/home/left/popup/work-order/WorkOrder",
+        "exact": true
+      },
+      {
+        "path": "/home/middle",
+        "component": "@/pages/home/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/home/middle/MiddlePage",
+        "component": "@/pages/home/middle/MiddlePage",
+        "exact": true
+      },
+      {
+        "path": "/home/right/config",
+        "component": "@/pages/home/right/config",
+        "exact": true
+      },
+      {
+        "path": "/home/right",
+        "component": "@/pages/home/right/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/city-eyes-select/CityEyesSelect",
+        "component": "@/pages/home/right/popup/city-eyes-select/CityEyesSelect",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/city-eyes-select",
+        "component": "@/pages/home/right/popup/city-eyes-select/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/citypopup/CityModal",
+        "component": "@/pages/home/right/popup/citypopup/CityModal",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/citypopup",
+        "component": "@/pages/home/right/popup/citypopup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/cszy-popup/CszyPopup",
+        "component": "@/pages/home/right/popup/cszy-popup/CszyPopup",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/cszy-popup",
+        "component": "@/pages/home/right/popup/cszy-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/intelligent-app",
+        "component": "@/pages/home/right/popup/intelligent-app/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/intelligent-app/IntelligentApp",
+        "component": "@/pages/home/right/popup/intelligent-app/IntelligentApp",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/social-govermance-popup",
+        "component": "@/pages/home/right/popup/social-govermance-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/social-govermance-popup/SocialGovermancePopup",
+        "component": "@/pages/home/right/popup/social-govermance-popup/SocialGovermancePopup",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/weather",
+        "component": "@/pages/home/right/popup/weather/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/weather/Weather",
+        "component": "@/pages/home/right/popup/weather/Weather",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/wisdom-live-popup",
+        "component": "@/pages/home/right/popup/wisdom-live-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/home/right/popup/wisdom-live-popup/WisdomLivePopup",
+        "component": "@/pages/home/right/popup/wisdom-live-popup/WisdomLivePopup",
+        "exact": true
+      },
+      {
+        "path": "/home/right/RightPage",
+        "component": "@/pages/home/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/home/right/services",
+        "component": "@/pages/home/right/services/index",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/home-v3",
+    "component": "@/pages/home-v3/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/home-v3/HomePage",
+        "component": "@/pages/home-v3/HomePage",
+        "exact": true
+      },
+      {
+        "path": "/home-v3",
+        "component": "@/pages/home-v3/index",
+        "exact": true
+      },
+      {
+        "path": "/home-v3/middle",
+        "component": "@/pages/home-v3/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/home-v3/services",
+        "component": "@/pages/home-v3/services/index",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/.",
+    "component": "@/pages/index",
+    "exact": true
+  },
+  {
+    "path": "/industry-economy",
+    "component": "@/pages/industry-economy/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/industry-economy/bottom/BottomPage",
+        "component": "@/pages/industry-economy/bottom/BottomPage",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/bottom",
+        "component": "@/pages/industry-economy/bottom/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left",
+        "component": "@/pages/industry-economy/left/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left/LeftPage",
+        "component": "@/pages/industry-economy/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left/popup/enterprise-list/EnterpriseList",
+        "component": "@/pages/industry-economy/left/popup/enterprise-list/EnterpriseList",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left/popup/enterprise-list",
+        "component": "@/pages/industry-economy/left/popup/enterprise-list/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left/services",
+        "component": "@/pages/industry-economy/left/services/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/left/utils/code",
+        "component": "@/pages/industry-economy/left/utils/code",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right",
+        "component": "@/pages/industry-economy/right/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/popup/enterprise-archive/EnterpriseArchive",
+        "component": "@/pages/industry-economy/right/popup/enterprise-archive/EnterpriseArchive",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/popup/enterprise-archive",
+        "component": "@/pages/industry-economy/right/popup/enterprise-archive/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/popup/enterprise-list/EnterpriseList",
+        "component": "@/pages/industry-economy/right/popup/enterprise-list/EnterpriseList",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/popup/enterprise-list",
+        "component": "@/pages/industry-economy/right/popup/enterprise-list/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/RightPage",
+        "component": "@/pages/industry-economy/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/right/services",
+        "component": "@/pages/industry-economy/right/services/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/services",
+        "component": "@/pages/industry-economy/services/index",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/utils/code",
+        "component": "@/pages/industry-economy/utils/code",
+        "exact": true
+      },
+      {
+        "path": "/industry-economy/utils/popupId",
+        "component": "@/pages/industry-economy/utils/popupId",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/ioc-one-net",
+    "component": "@/pages/ioc-one-net/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/ioc-one-net/bottom/BottomPage",
+        "component": "@/pages/ioc-one-net/bottom/BottomPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/bottom",
+        "component": "@/pages/ioc-one-net/bottom/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/bottom",
+        "component": "@/pages/ioc-one-net/car-park/bottom/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/left",
+        "component": "@/pages/ioc-one-net/car-park/left/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/left/leftPage",
+        "component": "@/pages/ioc-one-net/car-park/left/leftPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/middle",
+        "component": "@/pages/ioc-one-net/car-park/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/right",
+        "component": "@/pages/ioc-one-net/car-park/right/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/right/RightPage",
+        "component": "@/pages/ioc-one-net/car-park/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/car-park/right/utils/getCarParkRecordIcons",
+        "component": "@/pages/ioc-one-net/car-park/right/utils/getCarParkRecordIcons",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/garbage-exposure",
+        "component": "@/pages/ioc-one-net/garbage-exposure/_layout",
+        "exact": false,
+        "children": [
+          {
+            "path": "/ioc-one-net/garbage-exposure/GarbageExposure",
+            "component": "@/pages/ioc-one-net/garbage-exposure/GarbageExposure",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/GarbageExposureContext",
+            "component": "@/pages/ioc-one-net/garbage-exposure/GarbageExposureContext",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure",
+            "component": "@/pages/ioc-one-net/garbage-exposure/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/left",
+            "component": "@/pages/ioc-one-net/garbage-exposure/left/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/left/LeftPage",
+            "component": "@/pages/ioc-one-net/garbage-exposure/left/LeftPage",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/left/services",
+            "component": "@/pages/ioc-one-net/garbage-exposure/left/services/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/middle/intelligent-recognition",
+            "component": "@/pages/ioc-one-net/garbage-exposure/middle/intelligent-recognition/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/middle/overview",
+            "component": "@/pages/ioc-one-net/garbage-exposure/middle/overview/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/popup/camera-detail",
+            "component": "@/pages/ioc-one-net/garbage-exposure/popup/camera-detail/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/popup/center-enlarge/CenterEnlarge",
+            "component": "@/pages/ioc-one-net/garbage-exposure/popup/center-enlarge/CenterEnlarge",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/popup/center-enlarge",
+            "component": "@/pages/ioc-one-net/garbage-exposure/popup/center-enlarge/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/popup/event-detail",
+            "component": "@/pages/ioc-one-net/garbage-exposure/popup/event-detail/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/right",
+            "component": "@/pages/ioc-one-net/garbage-exposure/right/index",
+            "exact": true
+          },
+          {
+            "path": "/ioc-one-net/garbage-exposure/right/RightPage",
+            "component": "@/pages/ioc-one-net/garbage-exposure/right/RightPage",
+            "exact": true
+          }
+        ]
+      },
+      {
+        "path": "/ioc-one-net/home/HomePage",
+        "component": "@/pages/ioc-one-net/home/HomePage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/home",
+        "component": "@/pages/ioc-one-net/home/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/LeftPage",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/event-detail/EventDetail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/event-detail/EventDetail",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/event-detail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/event-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/event-info/EventInfo",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/event-info/EventInfo",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/event-info",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/event-info/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/video-conference",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/video-conference/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/left/popup/video-conference/VideoConference",
+        "component": "@/pages/ioc-one-net/ioc-command-control/left/popup/video-conference/VideoConference",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/camera-detail/CameraDetail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/camera-detail/CameraDetail",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/camera-detail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/camera-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/city-eyes/CityEyes",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/city-eyes/CityEyes",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/city-eyes",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/city-eyes/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/enlarge-popup/EnlargePopup",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/enlarge-popup/EnlargePopup",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/enlarge-popup",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/enlarge-popup/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/person-detail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/person-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/person-detail/PersonDetail",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/person-detail/PersonDetail",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/relevant-resource",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/relevant-resource/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/relevant-resource/RelevantResource",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/relevant-resource/RelevantResource",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/popup/type",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/popup/type",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/ioc-command-control/right/rightPage",
+        "component": "@/pages/ioc-one-net/ioc-command-control/right/rightPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/left",
+        "component": "@/pages/ioc-one-net/left/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/left/LeftPage",
+        "component": "@/pages/ioc-one-net/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/popup/high-area/HighArea",
+        "component": "@/pages/ioc-one-net/popup/high-area/HighArea",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/popup/high-area",
+        "component": "@/pages/ioc-one-net/popup/high-area/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/popup/high-area/Table",
+        "component": "@/pages/ioc-one-net/popup/high-area/Table",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/popup/work-order",
+        "component": "@/pages/ioc-one-net/popup/work-order/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/popup/work-order/WorkOrder",
+        "component": "@/pages/ioc-one-net/popup/work-order/WorkOrder",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right",
+        "component": "@/pages/ioc-one-net/right/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right/popup/order-filter",
+        "component": "@/pages/ioc-one-net/right/popup/order-filter/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right/popup/order-filter/OrderFilter",
+        "component": "@/pages/ioc-one-net/right/popup/order-filter/OrderFilter",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right/RightPage",
+        "component": "@/pages/ioc-one-net/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right/services",
+        "component": "@/pages/ioc-one-net/right/services/index",
+        "exact": true
+      },
+      {
+        "path": "/ioc-one-net/right/utils/code",
+        "component": "@/pages/ioc-one-net/right/utils/code",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/login-result",
+    "component": "@/pages/login-result/index",
+    "exact": true
+  },
+  {
+    "path": "/login-result/page",
+    "component": "@/pages/login-result/page",
+    "exact": true
+  },
+  {
+    "path": "/non-motor-vehicle-safety",
+    "component": "@/pages/non-motor-vehicle-safety/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/non-motor-vehicle-safety/bottom/BottomPage",
+        "component": "@/pages/non-motor-vehicle-safety/bottom/BottomPage",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/bottom",
+        "component": "@/pages/non-motor-vehicle-safety/bottom/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety",
+        "component": "@/pages/non-motor-vehicle-safety/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/left",
+        "component": "@/pages/non-motor-vehicle-safety/left/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/left/LeftPage",
+        "component": "@/pages/non-motor-vehicle-safety/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/left/services",
+        "component": "@/pages/non-motor-vehicle-safety/left/services/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/middle",
+        "component": "@/pages/non-motor-vehicle-safety/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/middle/MiddlePage",
+        "component": "@/pages/non-motor-vehicle-safety/middle/MiddlePage",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/NonMotorVehicleSafety",
+        "component": "@/pages/non-motor-vehicle-safety/NonMotorVehicleSafety",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/NonMotorVehicleSafetyContext",
+        "component": "@/pages/non-motor-vehicle-safety/NonMotorVehicleSafetyContext",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/popup/EventDetail/EventDetail",
+        "component": "@/pages/non-motor-vehicle-safety/popup/EventDetail/EventDetail",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/popup/EventDetail",
+        "component": "@/pages/non-motor-vehicle-safety/popup/EventDetail/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/popup/EventWarning/EventWarning",
+        "component": "@/pages/non-motor-vehicle-safety/popup/EventWarning/EventWarning",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/popup/EventWarning",
+        "component": "@/pages/non-motor-vehicle-safety/popup/EventWarning/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/right",
+        "component": "@/pages/non-motor-vehicle-safety/right/index",
+        "exact": true
+      },
+      {
+        "path": "/non-motor-vehicle-safety/right/RightPage",
+        "component": "@/pages/non-motor-vehicle-safety/right/RightPage",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/preview",
+    "component": "@/pages/preview/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/preview",
+        "component": "@/pages/preview/index",
+        "exact": true
+      },
+      {
+        "path": "/preview/PreviewPage",
+        "component": "@/pages/preview/PreviewPage",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/city-mgt",
+        "component": "@/pages/preview/routeConfigs/city-mgt",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/e-gov",
+        "component": "@/pages/preview/routeConfigs/e-gov",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/home",
+        "component": "@/pages/preview/routeConfigs/home",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/industry-economy",
+        "component": "@/pages/preview/routeConfigs/industry-economy",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/ioc-one-net",
+        "component": "@/pages/preview/routeConfigs/ioc-one-net",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/route",
+        "component": "@/pages/preview/routeConfigs/route",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/smart-live",
+        "component": "@/pages/preview/routeConfigs/smart-live",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/social-governance",
+        "component": "@/pages/preview/routeConfigs/social-governance",
+        "exact": true
+      },
+      {
+        "path": "/preview/routeConfigs/urban-rural",
+        "component": "@/pages/preview/routeConfigs/urban-rural",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/smart-livehood",
+    "component": "@/pages/smart-livehood/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/smart-livehood/config",
+        "component": "@/pages/smart-livehood/config",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left",
+        "component": "@/pages/smart-livehood/left/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/LeftPage",
+        "component": "@/pages/smart-livehood/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/apartment/Apartment",
+        "component": "@/pages/smart-livehood/left/popup/apartment/Apartment",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/apartment",
+        "component": "@/pages/smart-livehood/left/popup/apartment/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/edu-resource/EduResource",
+        "component": "@/pages/smart-livehood/left/popup/edu-resource/EduResource",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/edu-resource",
+        "component": "@/pages/smart-livehood/left/popup/edu-resource/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/hospital-detail/HospitalDetail",
+        "component": "@/pages/smart-livehood/left/popup/hospital-detail/HospitalDetail",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/hospital-detail",
+        "component": "@/pages/smart-livehood/left/popup/hospital-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/medical-treatment",
+        "component": "@/pages/smart-livehood/left/popup/medical-treatment/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/medical-treatment/MedicalTreatment",
+        "component": "@/pages/smart-livehood/left/popup/medical-treatment/MedicalTreatment",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/school-detail/constant",
+        "component": "@/pages/smart-livehood/left/popup/school-detail/constant",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/school-detail",
+        "component": "@/pages/smart-livehood/left/popup/school-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/school-detail/SchoolDetail",
+        "component": "@/pages/smart-livehood/left/popup/school-detail/SchoolDetail",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/tourism",
+        "component": "@/pages/smart-livehood/left/popup/tourism/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/left/popup/tourism/Tourism",
+        "component": "@/pages/smart-livehood/left/popup/tourism/Tourism",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/middle",
+        "component": "@/pages/smart-livehood/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right",
+        "component": "@/pages/smart-livehood/right/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/eme-indicators/EmeIndicators",
+        "component": "@/pages/smart-livehood/right/popup/eme-indicators/EmeIndicators",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/eme-indicators",
+        "component": "@/pages/smart-livehood/right/popup/eme-indicators/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/eme-site/Emesite",
+        "component": "@/pages/smart-livehood/right/popup/eme-site/Emesite",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/eme-site",
+        "component": "@/pages/smart-livehood/right/popup/eme-site/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/env-monitor/EnvMonitor",
+        "component": "@/pages/smart-livehood/right/popup/env-monitor/EnvMonitor",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/env-monitor",
+        "component": "@/pages/smart-livehood/right/popup/env-monitor/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/environmental-monitor/EnvironmentalMonitor",
+        "component": "@/pages/smart-livehood/right/popup/environmental-monitor/EnvironmentalMonitor",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/environmental-monitor",
+        "component": "@/pages/smart-livehood/right/popup/environmental-monitor/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/sec-meter",
+        "component": "@/pages/smart-livehood/right/popup/sec-meter/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/sec-meter/SecMeter",
+        "component": "@/pages/smart-livehood/right/popup/sec-meter/SecMeter",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/sec-risk",
+        "component": "@/pages/smart-livehood/right/popup/sec-risk/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/sec-risk/SecRisk",
+        "component": "@/pages/smart-livehood/right/popup/sec-risk/SecRisk",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-indicators",
+        "component": "@/pages/smart-livehood/right/popup/water-indicators/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-indicators/WaterIndicators",
+        "component": "@/pages/smart-livehood/right/popup/water-indicators/WaterIndicators",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-level",
+        "component": "@/pages/smart-livehood/right/popup/water-level/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-level/WaterLevel",
+        "component": "@/pages/smart-livehood/right/popup/water-level/WaterLevel",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-logging",
+        "component": "@/pages/smart-livehood/right/popup/water-logging/index",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/popup/water-logging/WaterLogging",
+        "component": "@/pages/smart-livehood/right/popup/water-logging/WaterLogging",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/RightPage",
+        "component": "@/pages/smart-livehood/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/utils/getMedResourcesIcons",
+        "component": "@/pages/smart-livehood/right/utils/getMedResourcesIcons",
+        "exact": true
+      },
+      {
+        "path": "/smart-livehood/right/utils/getOverviewIcons",
+        "component": "@/pages/smart-livehood/right/utils/getOverviewIcons",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/social-governance",
+    "component": "@/pages/social-governance/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/social-governance/config",
+        "component": "@/pages/social-governance/config",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left",
+        "component": "@/pages/social-governance/left/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/LeftPage",
+        "component": "@/pages/social-governance/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/citizen-fuse/CitizenFuse",
+        "component": "@/pages/social-governance/left/popup/citizen-fuse/CitizenFuse",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/citizen-fuse",
+        "component": "@/pages/social-governance/left/popup/citizen-fuse/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/contradiction-dispute/ContradictionDispute",
+        "component": "@/pages/social-governance/left/popup/contradiction-dispute/ContradictionDispute",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/contradiction-dispute",
+        "component": "@/pages/social-governance/left/popup/contradiction-dispute/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/grid-analysis/GridAnalysis",
+        "component": "@/pages/social-governance/left/popup/grid-analysis/GridAnalysis",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/grid-analysis",
+        "component": "@/pages/social-governance/left/popup/grid-analysis/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/subject-detail",
+        "component": "@/pages/social-governance/left/popup/subject-detail/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/popup/subject-detail/SubjectDetail",
+        "component": "@/pages/social-governance/left/popup/subject-detail/SubjectDetail",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/left/utils/icons",
+        "component": "@/pages/social-governance/left/utils/icons",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/middle",
+        "component": "@/pages/social-governance/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/middle/popup/detail",
+        "component": "@/pages/social-governance/middle/popup/detail/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/middle/popup",
+        "component": "@/pages/social-governance/middle/popup/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/middle/popup/video",
+        "component": "@/pages/social-governance/middle/popup/video/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right",
+        "component": "@/pages/social-governance/right/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/case-details/CaseDetails",
+        "component": "@/pages/social-governance/right/popup/case-details/CaseDetails",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/case-details",
+        "component": "@/pages/social-governance/right/popup/case-details/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/country-fly-line/FlyLine",
+        "component": "@/pages/social-governance/right/popup/country-fly-line/FlyLine",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/country-fly-line",
+        "component": "@/pages/social-governance/right/popup/country-fly-line/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/country-fly-line/Map",
+        "component": "@/pages/social-governance/right/popup/country-fly-line/Map",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/dispute-details/DisputeDetails",
+        "component": "@/pages/social-governance/right/popup/dispute-details/DisputeDetails",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/dispute-details",
+        "component": "@/pages/social-governance/right/popup/dispute-details/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/person-details",
+        "component": "@/pages/social-governance/right/popup/person-details/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/person-details/PersonDetails",
+        "component": "@/pages/social-governance/right/popup/person-details/PersonDetails",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/portrait-analysis",
+        "component": "@/pages/social-governance/right/popup/portrait-analysis/index",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/popup/portrait-analysis/PortraitAnalysis",
+        "component": "@/pages/social-governance/right/popup/portrait-analysis/PortraitAnalysis",
+        "exact": true
+      },
+      {
+        "path": "/social-governance/right/RightPage",
+        "component": "@/pages/social-governance/right/RightPage",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/urban-rural",
+    "component": "@/pages/urban-rural/_layout",
+    "exact": false,
+    "children": [
+      {
+        "path": "/urban-rural/left",
+        "component": "@/pages/urban-rural/left/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/left/LeftPage",
+        "component": "@/pages/urban-rural/left/LeftPage",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/left/popup/index-statistics",
+        "component": "@/pages/urban-rural/left/popup/index-statistics/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/left/popup/index-statistics/IndexStatistics",
+        "component": "@/pages/urban-rural/left/popup/index-statistics/IndexStatistics",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/left/popup/project-information",
+        "component": "@/pages/urban-rural/left/popup/project-information/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/left/popup/project-information/ProjectInformation",
+        "component": "@/pages/urban-rural/left/popup/project-information/ProjectInformation",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/middle",
+        "component": "@/pages/urban-rural/middle/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right",
+        "component": "@/pages/urban-rural/right/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/popup/detail/DetailView",
+        "component": "@/pages/urban-rural/right/popup/detail/DetailView",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/popup/detail",
+        "component": "@/pages/urban-rural/right/popup/detail/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/popup/overview",
+        "component": "@/pages/urban-rural/right/popup/overview/index",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/popup/overview/OverviewPage",
+        "component": "@/pages/urban-rural/right/popup/overview/OverviewPage",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/RightPage",
+        "component": "@/pages/urban-rural/right/RightPage",
+        "exact": true
+      },
+      {
+        "path": "/urban-rural/right/utils/code",
+        "component": "@/pages/urban-rural/right/utils/code",
+        "exact": true
+      }
+    ]
+  },
+  {
+    "path": "/video-player",
+    "component": "@/pages/video-player/index",
+    "exact": true
+  },
+  {
+    "path": "/video-player/page",
+    "component": "@/pages/video-player/page",
+    "exact": true
+  }
+]

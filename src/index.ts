@@ -17,6 +17,7 @@ export interface RouteConfig {
   childCache?: { [key: string]: RouteConfig };
 }
 
+
 export interface IConfig {
   /** Path of your convention routes root. */
   pageRoot?: string;
