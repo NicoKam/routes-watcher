@@ -18,7 +18,7 @@ const defaultToRouteOptions: ToRouteOptions = {
   isLayout: (obj) => obj.name === '_layout',
   componentPath: (obj) => '@/pages/' + obj.path,
   routePath: (obj) => {
-    const bName = basename(obj.path, obj.suffix);
+    const bName = basename(obj.path, obj.extname);
     let routePath = '';
     if (obj.name === '_layout' || obj.name === 'index') {
       routePath = dirname(obj.path);
@@ -45,7 +45,7 @@ function buildRoutes(dirTree: DirFileObject[], root: RouteConfig[], options: ToR
 
     if ('isFile' in obj) {
       // extensions filter
-      if (extensions instanceof Set && extensions.size > 0 && !extensions.has(obj.suffix)) continue;
+      if (extensions instanceof Set && extensions.size > 0 && !extensions.has(obj.extname)) continue;
       // custom filter
       if (false === filter(obj)) continue;
       const layout = isLayout(obj);

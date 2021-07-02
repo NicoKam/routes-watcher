@@ -1,8 +1,10 @@
 export type FileObject = {
+  /** path relative to page root */
   path: string;
+  /** filename */
   name: string;
   isFile: true;
-  suffix: string;
+  extname: string;
 };
 
 export type DirObject = {

@@ -45,7 +45,7 @@ async function scan(dir: string = '', options: ScanOptions): Promise<DirFileObje
       name: basename(dir, ext),
       path: dir,
       isFile: true,
-      suffix: ext,
+      extname: ext,
     };
   } else if (stat.isDirectory()) {
     const dirRes = await fs.readdir(fullPath);
