@@ -3,16 +3,19 @@ import { DirFileObject, FileObject, RouteConfig } from './defs';
 import slash from 'slash';
 
 export type ToRouteOptions = {
+  childrenKey: string;
   extensions: string[] | Set<string>;
   filter: (obj: FileObject) => boolean;
   isLayout: (obj: FileObject) => boolean;
   componentPath: (obj: FileObject) => string;
   routePath: (obj: FileObject) => string;
+  modifyRoutePath?: (route: string, obj: FileObject) => string;
 };
 
 const defaultRouteExt = new Set(['.js', '.jsx', '.ts', '.tsx', '.vue']);
 
 const defaultToRouteOptions: ToRouteOptions = {
+  childrenKey: 'children',
   extensions: defaultRouteExt,
   filter: () => true,
   isLayout: (obj) => obj.name === '_layout',
@@ -29,14 +32,24 @@ const defaultToRouteOptions: ToRouteOptions = {
   },
 };
 
+function sortDirTree(dirTree: DirFileObject[]) {
+  return dirTree.slice().sort((a, b) => {
+    if (a.name === 'index') return -1;
+    if (b.name === 'index') return -1;
+    return (a.path + a.name).localeCompare(b.path + b.name);
+  });
+}
+
 /**
  * Scan the directory tree and build routes config.
  * @param dirTree directory tree from scanDir()
  * @param root reference of root routes config
  * @param options
  */
-function buildRoutes(dirTree: DirFileObject[], root: RouteConfig[], options: ToRouteOptions): void {
-  const { isLayout, componentPath, filter, routePath, extensions } = options;
+function buildRoutes(_dirTree: DirFileObject[], root: RouteConfig[], options: ToRouteOptions): void {
+  const { isLayout, componentPath, filter, routePath, modifyRoutePath = (r) => r, extensions, childrenKey } = options;
+
+  const dirTree = sortDirTree(_dirTree);
 
   const subRoot: RouteConfig[] = [];
   let layoutRoot: RouteConfig | null = null;
@@ -49,20 +62,23 @@ function buildRoutes(dirTree: DirFileObject[], root: RouteConfig[], options: ToR
       // custom filter
       if (false === filter(obj)) continue;
       const layout = isLayout(obj);
+      const path = modifyRoutePath(routePath(obj), obj);
+      const component = componentPath(obj);
+
       if (layout) {
         // layout found
         layoutRoot = {
-          path: routePath(obj),
-          component: componentPath(obj),
+          path,
           exact: false,
-          children: [],
+          component,
+          [childrenKey]: [],
         };
       } else {
         // page only
         subRoot.push({
-          path: routePath(obj),
-          component: componentPath(obj),
+          path,
           exact: true,
+          component,
         });
       }
     } else {
@@ -73,7 +89,7 @@ function buildRoutes(dirTree: DirFileObject[], root: RouteConfig[], options: ToR
 
   if (layoutRoot != null) {
     // Take current routes to a deeper level(children) when there is a layout file exists.
-    layoutRoot.children = subRoot;
+    layoutRoot[childrenKey] = subRoot;
     root.push(layoutRoot);
   } else {
     // Merge all routes to root. No layout.
