@@ -33,6 +33,7 @@ async function scan(dir: string = '', options: ScanOptions): Promise<DirFileObje
   }
 
   if (stat.isFile()) {
+    // check includes & excludes rules
     const isValid = includes.every((reg) => reg.test(fullPath)) && !excludes.some((reg) => reg.test(fullPath));
 
     if (!isValid) {
