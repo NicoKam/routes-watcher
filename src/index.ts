@@ -14,6 +14,7 @@ export interface IConfig {
   extensions?: ToRouteOptions['extensions'];
   isLayout?: ToRouteOptions['isLayout'];
   routePath?: ToRouteOptions['routePath'];
+  childrenKey?: ToRouteOptions['childrenKey'];
   /** Regexp to match file fullpath */
   includes?: ScanDirOptions['includes'];
   /** Regexp to ignore file fullpath */
@@ -27,7 +28,7 @@ export interface IConfig {
   /** output path */
   output?: string | ((outputStr: string, templateStr: string) => void);
   /** modify routes finally */
-  modifyRoutes: (routes: RouteConfig[]) => any;
+  modifyRoutes?: (routes: RouteConfig[]) => any;
 }
 
 const defaultPageRoot = join(process.cwd(), 'src/pages');
