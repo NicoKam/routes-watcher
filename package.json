@@ -1,15 +1,23 @@
 {
   "name": "routes-watcher",
-  "version": "0.2.4",
+  "version": "1.0.1",
   "description": "Watch the routes directory and generate the routes config.",
   "main": "lib/index.js",
   "files": [
     "lib"
   ],
   "scripts": {
-    "compile": "k-tools compile",
-    "prepublish": "npm run compile",
+    "clear": "rimraf esm lib",
+    "build": "npm run clear && tsc -p config/tsconfig.esm.prod.json && tsc -p config/tsconfig.prod.json",
+    "prepublish": "npm run build",
     "pub": "npm publish --registry=https://registry.npmjs.org/ && git push"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NicoKam/routes-watcher.git"
   },
   "keywords": [
     "routes",
@@ -22,7 +30,8 @@
   "license": "MIT",
   "dependencies": {
     "chokidar": "^3.3.1",
-    "glob": "^7.1.6"
+    "glob": "^7.1.6",
+    "slash": "^3.0.0"
   },
   "devDependencies": {
     "@types/glob": "^7.1.1",

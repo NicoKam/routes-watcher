@@ -1,16 +1,15 @@
 {
   "compilerOptions": {
-    "outDir": "build/dist",
-    "module": "ESNext",
-    "target": "ESNext",
-    "lib": [
-      "ESNext",
-      "dom"
-    ],
+    "module": "commonjs",
+    "target": "es2015",
+    "lib": ["es2017", "DOM"],
     "sourceMap": true,
+    "noImplicitAny": false,
     "baseUrl": ".",
+    "jsx": "react",
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
+    "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "suppressImplicitAnyIndexErrors": true,
@@ -18,13 +17,14 @@
     "allowJs": true,
     "skipLibCheck": true,
     "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "resolveJsonModule": true,
+    "declaration": true,
     "strict": true,
-    "esModuleInterop": true
+    "outDir": "./lib"
   },
-  "exclude": [
-    "node_modules",
-    "es",
-    "lib",
-    "scripts"
-  ]
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
 }
