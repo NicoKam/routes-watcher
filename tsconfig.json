@@ -24,9 +24,7 @@
     "outDir": "./lib"
   },
   "include": [
-    "src/**/*",
-    "test/**/*",
-    "typings.d.ts"
+    "src/**/*"
   ],
   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
 }
