@@ -14,6 +14,7 @@ export interface IConfig {
   extensions?: ToRouteOptions['extensions'];
   isLayout?: ToRouteOptions['isLayout'];
   routePath?: ToRouteOptions['routePath'];
+  modifyRoutePath?: ToRouteOptions['modifyRoutePath'];
   childrenKey?: ToRouteOptions['childrenKey'];
   /** Regexp to match file fullpath */
   includes?: ScanDirOptions['includes'];
