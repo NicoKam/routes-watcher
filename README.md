@@ -59,7 +59,7 @@ scanRoutes({
   isLayout: (obj: FileObject) => obj.name === '_layout',
   /** 根据文件信息 生成组件路径 */
   componentPath: (obj: FileObject) => '@/pages/' + obj.path,
-  /** 根据页面文件信息 生成路由地址 */
+  /** 根据页面文件信息 生成路由地址 下面所看到的是默认处理逻辑 */
   routePath: (obj: FileObject) => {
     const bName = basename(obj.path, obj.extname);
     let routePath = '';
@@ -70,6 +70,12 @@ scanRoutes({
     }
     return '/' + (routePath === '.' ? '' : routePath);
   },
+  /** 在 routePath 之后 进一步对 path 进行处理 */
+  modifyRoutePath: (path: string, obj: FileObject) => {
+    return path;
+  },
+  /** 路由树的子节点字段名称 */
+  childrenKey: 'children',
   /* 自定义路由生成配置 end */
 
   /* 模板内容，工具会读取该模板内容，并替换其中的 @routeConfig 字符串为路由配置 */

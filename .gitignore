@@ -2,3 +2,5 @@ node_modules
 lib
 es
 .idea
+test/
+!test/*.ts

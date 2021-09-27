@@ -25,6 +25,7 @@
   },
   "include": [
     "src/**/*",
+    "test/**/*",
     "typings.d.ts"
   ],
   "exclude": ["node_modules", "build", "dist", "scripts", "src/.umi/*", "webpack", "jest"]
